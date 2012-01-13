@@ -22,6 +22,8 @@
 set -o nounset                              # Treat unset variables as an error
 set -x
 
+sudo echo "I want to take sudo password to work without bothering you :)"
+
 arch=`uname -m`
 if [ ${arch} == 'x86_64' ]; then
     arch="amd64"
@@ -35,7 +37,6 @@ mkdir -p ${builddir}
 cd ${builddir}
 git clone git://github.com/linuxmint/Cinnamon.git
 git clone git://github.com/linuxmint/cinnamon-settings.git
-sudo echo "I want to take sudo password to work without bothering you :)"
 sudo apt-get install build-essential dpkg-dev
 sudo apt-get build-dep gnome-shell
 
